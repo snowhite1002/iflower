@@ -1,0 +1,28 @@
+body, div, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Microsoft YaHei', Arial;
+    font-size: 14px;
+    color: #96926E;
+    background: #F9F6EA;
+    height: 100%;
+}
+
+ul, li {
+    list-style: none;
+}
+
+#app {
+    height: 100%;
+}
+
+#app .app-container {
+    height: 100%;
+}

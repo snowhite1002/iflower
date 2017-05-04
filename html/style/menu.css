@@ -1,0 +1,29 @@
+.menu {
+    padding: 15px 0 0 0;
+    width: 200px;
+    height: 100%;
+    border-right: 1px solid #EEE;
+    box-shadow: 0 0 15px #aaaaaa;
+}
+
+.menu ul {
+    background: transparent;
+}
+
+.menu ul li {
+    padding: 7px 0 7px 0;
+    width: 200px;
+    letter-spacing: 0.15em;
+    color: #96926E;
+    text-align: center;
+}
+
+.menu ul li:hover {
+    color: #C0B424;
+    cursor: pointer;
+}
+
+.menu ul li.selected {
+    background-color: #fff;
+    color: #C0B424;
+}
