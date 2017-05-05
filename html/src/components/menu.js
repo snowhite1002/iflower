@@ -8,7 +8,7 @@ class Menu extends React.Component {
         super(props);
 
         this.state = {
-            selectedMenu: 0
+            selectedMenu: 3
         };
 
         this.handleMenuClick = this.handleMenuClick.bind(this);

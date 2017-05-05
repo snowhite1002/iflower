@@ -1,4 +1,4 @@
-body, div, ul, li {
+body, div, ul, li, table, tr, th, td {
     margin: 0;
     padding: 0;
 }
