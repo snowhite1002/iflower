@@ -18,12 +18,13 @@
     text-align: center;
 }
 
-.menu ul li:hover {
-    color: #C0B424;
-    cursor: pointer;
+.menu ul li.selected {
+    background-color: #C0B424;
+    color: #fff;
 }
 
-.menu ul li.selected {
+.menu ul li:hover {
     background-color: #fff;
     color: #C0B424;
+    cursor: pointer;
 }

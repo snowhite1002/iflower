@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "3f8ec367c6c9dc982537"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "1898f5c52aa03b8fa472"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -10465,19 +10465,16 @@ var Seed = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (Seed.__proto__ || Object.getPrototypeOf(Seed)).call(this, props));
 
         _this.generateSeedList = _this.generateSeedList.bind(_this);
-        _this.deleteSeed = _this.deleteSeed.bind(_this);
         return _this;
     }
 
     _createClass(Seed, [{
         key: "deleteSeed",
         value: function deleteSeed(event, id) {
-            var trDom = event.target.parentNode.parentNode;
-            var childNodes = trDom.childNodes;
+            var currentDom = event.target.parentNode.parentNode; // <tr></tr>
+            var parentDom = currentDom.parentNode;
 
-            for (var i = childNodes.length - 1; i >= 0; --i) {
-                trDom.removeChild(childNodes[i]);
-            }
+            parentDom.removeChild(currentDom);
 
             // operate data
         }
