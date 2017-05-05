@@ -2,7 +2,7 @@
  * Created by xue.bai_2 on 2017/5/4.
  */
 import React from 'react';
-import Seed from './seed.js';
+import Seed from './seed';
 
 class Content extends React.Component {
     constructor(props){

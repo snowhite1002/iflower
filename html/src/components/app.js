@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import Menu from './menu.js';
-import Content from './content.js';
+import Content from './content';
 
 class App extends React.Component {
     constructor(props){

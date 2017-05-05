@@ -3,8 +3,7 @@
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/app.js';
-// import DomUtil from './util/domUtil.js';
+import App from './components/app';
 
 ReactDOM.render(
     <App />,

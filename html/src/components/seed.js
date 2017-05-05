@@ -8,16 +8,13 @@ class Seed extends React.Component {
         super(props);
 
         this.generateSeedList = this.generateSeedList.bind(this);
-        this.deleteSeed = this.deleteSeed.bind(this);
     }
 
     deleteSeed(event, id){
-        let trDom = event.target.parentNode.parentNode;
-        let childNodes = trDom.childNodes;
+        let currentDom = event.target.parentNode.parentNode;// <tr></tr>
+        let parentDom = currentDom.parentNode;
 
-        for(let i = childNodes.length - 1; i >= 0; --i){
-            trDom.removeChild(childNodes[i]);
-        }
+        parentDom.removeChild(currentDom);
 
         // operate data
     }
