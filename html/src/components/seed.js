@@ -2,12 +2,20 @@
  * Created by xue.bai_2 on 2017/5/4.
  */
 import React from 'react';
+import EditSeed from './editSeed';
 
 class Seed extends React.Component {
     constructor(props){
         super(props);
 
         this.generateSeedList = this.generateSeedList.bind(this);
+        this.editSeed = this.editSeed.bind(this);
+        this.deleteSeed = this.deleteSeed.bind(this);
+
+        this.state = {
+            clickData: {},
+            showEditSeed: false
+        };
     }
 
     deleteSeed(event, id){
@@ -17,6 +25,10 @@ class Seed extends React.Component {
         parentDom.removeChild(currentDom);
 
         // operate data
+    }
+
+    editSeed(event, data){
+        this.setState({clickData: data, showEditSeed: true});
     }
 
     generateSeedList(data){
@@ -32,8 +44,8 @@ class Seed extends React.Component {
                     <td>{item.count}</td>
                     <td>
                         {/*<a className="sow-seed">播种</a>|*/}
-                        <a className="edit-seed">编辑</a>|
-                        <a className="delete-seed" onClick={function(event){this.deleteSeed(event, item.id)}.bind(this)}>删除</a>
+                        <span className="edit-seed" onClick={function(event){this.editSeed(event, item)}.bind(this)}>编辑</span>|
+                        <span className="delete-seed" onClick={function(event){this.deleteSeed(event, item.id)}.bind(this)}>删除</span>
                     </td>
                 </tr>
             );
@@ -85,10 +97,10 @@ class Seed extends React.Component {
         return (
             <div className="seed-content">
                 {this.generateSeedList(seedData)}
+                <EditSeed clickData={this.state.clickData} showEditSeed={this.state.showEditSeed} />
             </div>
         );
     }
-
 }
 
 export default Seed;

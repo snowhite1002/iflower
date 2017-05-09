@@ -26,3 +26,7 @@ ul, li {
 #app .app-container {
     height: 100%;
 }
+
+.hide {
+    display: none;
+}

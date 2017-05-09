@@ -30,3 +30,7 @@
     background-color: #fff;
     opacity: 0.7;
 }
+
+.content .seed-content .edit-seed, .content .seed-content .delete-seed {
+    cursor: pointer;
+}
