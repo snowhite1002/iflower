@@ -8,5 +8,5 @@ export default function deleteChildNodes(parent, currentNode){
     //     currentNode.removeChild(childNodes[i]);
     // }
 
-    parent.removeChild(currentNode);
+    //parent.removeChild(currentNode);
 }
