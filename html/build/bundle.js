@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "dd917a9dcc0728890239"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "528735d571ca149f5fb6"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -10351,14 +10351,7 @@ var EditSeed = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (EditSeed.__proto__ || Object.getPrototypeOf(EditSeed)).call(this, props));
 
         _this.state = {
-            currentData: {
-                id: 0,
-                name: '',
-                category: '',
-                color: '',
-                date: '',
-                count: 0
-            }
+            currentData: _this.props.clickData
         };
 
         _this.componentWillReceiveProps = _this.componentWillReceiveProps.bind(_this);
@@ -10463,7 +10456,7 @@ var EditSeed = function (_React$Component) {
                     _react2.default.createElement(
                         'span',
                         null,
-                        '\u7CFB\u5217\uFF1A'
+                        '\u54C1\u79CD\uFF1A'
                     ),
                     _react2.default.createElement('input', { id: 'seed-category', type: 'text', placeholder: '\u7CFB\u5217', value: this.state.currentData.category, onChange: this.handleCateChange })
                 ),
@@ -10777,7 +10770,14 @@ var Seed = function (_React$Component) {
                 date: '2017-02-10',
                 count: 30
             }],
-            clickData: {},
+            clickData: {
+                id: 0,
+                name: '',
+                category: '',
+                color: '',
+                date: '',
+                count: 0
+            },
             showEditSeed: false
         };
         return _this;
@@ -10826,7 +10826,14 @@ var Seed = function (_React$Component) {
             }
 
             this.setState({
-                clickData: {},
+                clickData: {
+                    id: 0,
+                    name: '',
+                    category: '',
+                    color: '',
+                    date: '',
+                    count: 0
+                },
                 showEditSeed: false
             });
         }
@@ -10930,7 +10937,7 @@ var Seed = function (_React$Component) {
                         _react2.default.createElement(
                             'th',
                             null,
-                            '\u7CFB\u5217'
+                            '\u54C1\u79CD'
                         ),
                         _react2.default.createElement(
                             'th',

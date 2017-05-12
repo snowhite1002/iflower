@@ -8,14 +8,7 @@ class EditSeed extends React.Component {
         super(props);
 
         this.state = {
-            currentData: {
-                    id: 0,
-                    name: '',
-                    category: '',
-                    color: '',
-                    date: '',
-                    count: 0
-            }
+            currentData: this.props.clickData
         };
 
         this.componentWillReceiveProps = this.componentWillReceiveProps.bind(this);
@@ -92,7 +85,7 @@ class EditSeed extends React.Component {
                 <input id="seed-name" type="text" placeholder="名称" value={this.state.currentData.name} onChange={this.handleNameChange} />
             </label>
             <label>
-                <span>系列：</span>
+                <span>品种：</span>
                 <input id="seed-category" type="text" placeholder="系列" value={this.state.currentData.category} onChange={this.handleCateChange} />
             </label>
             <label>

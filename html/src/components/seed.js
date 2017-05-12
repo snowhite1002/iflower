@@ -40,7 +40,14 @@ class Seed extends React.Component {
                     count: 30
                 }
             ],
-            clickData: {},
+            clickData: {
+                id: 0,
+                name: '',
+                category: '',
+                color: '',
+                date: '',
+                count: 0
+            },
             showEditSeed: false
         };
     }
@@ -84,7 +91,14 @@ class Seed extends React.Component {
         }
 
         this.setState({
-            clickData: {},
+            clickData: {
+                id: 0,
+                name: '',
+                category: '',
+                color: '',
+                date: '',
+                count: 0
+            },
             showEditSeed: false
         });
     }
@@ -113,7 +127,7 @@ class Seed extends React.Component {
             <tbody>
             <tr>
                 <th>名称</th>
-                <th>系列</th>
+                <th>品种</th>
                 <th>颜色</th>
                 <th>生产/购买时间</th>
                 <th>数量（颗）</th>
