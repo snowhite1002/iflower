@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "528735d571ca149f5fb6"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "685ea756e4c4f346da70"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -10431,6 +10431,7 @@ var EditSeed = function (_React$Component) {
         key: 'render',
         value: function render() {
             var style = this.props.showEditSeed ? 'popupEditSeed' : 'popupEditSeed hide';
+            var title = (this.state.currentData.id ? '编辑' : '添加') + '种子';
 
             return _react2.default.createElement(
                 'div',
@@ -10438,7 +10439,7 @@ var EditSeed = function (_React$Component) {
                 _react2.default.createElement(
                     'h1',
                     null,
-                    '\u7F16\u8F91\u79CD\u5B50'
+                    title
                 ),
                 _react2.default.createElement(
                     'label',
@@ -10890,7 +10891,7 @@ var Seed = function (_React$Component) {
                                     }.bind(_this2) },
                                 '\u7F16\u8F91'
                             ),
-                            '|',
+                            '\xA0|\xA0',
                             _react2.default.createElement(
                                 'span',
                                 { className: 'delete-seed', onClick: function () {
@@ -10967,9 +10968,25 @@ var Seed = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
+            var item = {
+                id: 0,
+                name: '',
+                category: '',
+                color: '',
+                date: '',
+                count: 0
+            };
+
             return _react2.default.createElement(
                 'div',
                 { className: 'seed-content' },
+                _react2.default.createElement(
+                    'button',
+                    { className: 'add-seed', onClick: function () {
+                            this.showEditSeed(item);
+                        }.bind(this) },
+                    '\u6DFB\u52A0\u79CD\u5B50'
+                ),
                 this.generateSeedList(this.state.seedData),
                 _react2.default.createElement(_editSeed2.default, { clickData: this.state.clickData, showEditSeed: this.state.showEditSeed, handleEdit: this.editSeed })
             );

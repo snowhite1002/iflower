@@ -77,9 +77,10 @@ class EditSeed extends React.Component {
 
     render(){
         let style = this.props.showEditSeed ? 'popupEditSeed' : 'popupEditSeed hide';
+        let title = (this.state.currentData.id ? '编辑' : '添加') + '种子';
 
         return <div className={style}>
-            <h1>编辑种子</h1>
+            <h1>{title}</h1>
             <label>
                 <span>名称：</span>
                 <input id="seed-name" type="text" placeholder="名称" value={this.state.currentData.name} onChange={this.handleNameChange} />

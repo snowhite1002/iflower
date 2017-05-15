@@ -116,7 +116,7 @@ class Seed extends React.Component {
                     <td>{item.count}</td>
                     <td>
                         {/*<a className="sow-seed">播种</a>|*/}
-                        <span className="edit-seed" onClick={function(){this.showEditSeed(item)}.bind(this)}>编辑</span>|
+                        <span className="edit-seed" onClick={function(){this.showEditSeed(item)}.bind(this)}>编辑</span>&nbsp;|&nbsp;
                         <span className="delete-seed" onClick={function(){this.deleteSeed(item.id)}.bind(this)}>删除</span>
                     </td>
                 </tr>
@@ -139,8 +139,18 @@ class Seed extends React.Component {
     }
 
     render() {
+        let item = {
+            id: 0,
+            name: '',
+            category: '',
+            color: '',
+            date: '',
+            count: 0
+        };
+
         return (
             <div className="seed-content">
+                <button className="add-seed" onClick={function(){this.showEditSeed(item)}.bind(this)}>添加种子</button>
                 {this.generateSeedList(this.state.seedData)}
                 <EditSeed clickData={this.state.clickData} showEditSeed={this.state.showEditSeed} handleEdit={this.editSeed} />
             </div>
