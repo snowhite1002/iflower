@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "685ea756e4c4f346da70"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "8dc545729093e2f475e1"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -10413,6 +10413,10 @@ var EditSeed = function (_React$Component) {
     }, {
         key: 'submitEdit',
         value: function submitEdit() {
+            if (this.state.currentData.count <= 0) {
+                return;
+            }
+
             this.props.handleEdit(this.state.currentData);
         }
     }, {
