@@ -62,6 +62,10 @@ class EditSeed extends React.Component {
     }
 
     submitEdit(){
+        if(this.state.currentData.count <= 0){
+            return;
+        }
+
         this.props.handleEdit(this.state.currentData);
     }
 
