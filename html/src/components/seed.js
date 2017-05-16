@@ -74,19 +74,15 @@ class Seed extends React.Component {
     }
 
     editSeed(clickData){
-        console.log(clickData);
         if(clickData){
-            console.log(1);
             if(clickData.id){
                 for(let index in this.state.seedData){
                     if(this.state.seedData[index].id == clickData.id){
                         this.state.seedData.splice(index, 1, clickData);
-                        console.log(2);
                         break;
                     }
                 }
             }else{
-                console.log(3);
                 this.state.seedData.push(clickData);
             }
 
