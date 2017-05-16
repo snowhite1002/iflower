@@ -11,7 +11,7 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            selectedMenu: Constants.Module.Seed
+            selectedMenu: Constants.Module.Diary
         };
 
         this.handleContent = this.handleContent.bind(this);
