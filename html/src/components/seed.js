@@ -2,6 +2,7 @@
  * Created by xue.bai_2 on 2017/5/4.
  */
 import React from 'react';
+import {Constants} from '../constants/constants';
 import EditSeed from './editSeed';
 
 class Seed extends React.Component {
@@ -142,6 +143,10 @@ class Seed extends React.Component {
         </table>;
     }
 
+    componentWillReceiveProps(nextProps){
+        this.setState({selectedContent: nextProps.selectedContent});
+    }
+
     render() {
         let item = {
             id: 0,
@@ -152,8 +157,10 @@ class Seed extends React.Component {
             count: 0
         };
 
+        let style = this.props.selectedContent == Constants.Module.Seed ? 'seed-content' : 'seed-content hide';
+
         return (
-            <div className="seed-content">
+            <div className={style}>
                 <button className="add-seed" onClick={function(){this.showEditSeed(item)}.bind(this)}>添加种子</button>
                 {this.generateSeedList(this.state.seedData)}
                 <div className="shade">

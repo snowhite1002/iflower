@@ -2,21 +2,24 @@
  * Created by xue.bai_2 on 2017/5/4.
  */
 import React from 'react';
+import {Constants} from '../constants/constants';
 
 class Menu extends React.Component {
     constructor(props){
         super(props);
 
         this.state = {
-            selectedMenu: 3
+            selectedMenu: this.props.seledtedMenu
         };
 
+        this.componentWillReceiveProps = this.componentWillReceiveProps.bind(this);
         this.handleMenuClick = this.handleMenuClick.bind(this);
         this.generateMenu = this.generateMenu.bind(this);
     }
 
     handleMenuClick(index){
         this.setState({selectedMenu: index});
+        this.props.OnMenuChange(index);
     }
 
     generateMenu(data){
@@ -35,22 +38,26 @@ class Menu extends React.Component {
         return <ul>{menuItems}</ul>;
     }
 
+    componentWillReceiveProps(nextProps){
+        this.setState({selectedMenu: nextProps.seledtedMenu});
+    }
+
     render() {
         let data = [
             {
-                index: 0,
+                index: Constants.Module.Diary,
                 name: '花记'
             },
             {
-                index: 1,
+                index: Constants.Module.Garden,
                 name: '花园'
             },
             {
-                index: 2,
+                index: Constants.Module.Cenotaph,
                 name: '纪念碑'
             },
             {
-                index: 3,
+                index: Constants.Module.Seed,
                 name: '种子仓库'
             }
         ];
