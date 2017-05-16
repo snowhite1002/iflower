@@ -73,15 +73,19 @@ class Seed extends React.Component {
     }
 
     editSeed(clickData){
+        console.log(clickData);
         if(clickData){
+            console.log(1);
             if(clickData.id){
                 for(let index in this.state.seedData){
                     if(this.state.seedData[index].id == clickData.id){
                         this.state.seedData.splice(index, 1, clickData);
+                        console.log(2);
                         break;
                     }
                 }
             }else{
+                console.log(3);
                 this.state.seedData.push(clickData);
             }
 
@@ -152,7 +156,9 @@ class Seed extends React.Component {
             <div className="seed-content">
                 <button className="add-seed" onClick={function(){this.showEditSeed(item)}.bind(this)}>添加种子</button>
                 {this.generateSeedList(this.state.seedData)}
-                <EditSeed clickData={this.state.clickData} showEditSeed={this.state.showEditSeed} handleEdit={this.editSeed} />
+                <div className="shade">
+                    <EditSeed clickData={this.state.clickData} showEditSeed={this.state.showEditSeed} handleEdit={this.editSeed} />
+                </div>
             </div>
         );
     }

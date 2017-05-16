@@ -1,4 +1,4 @@
-body, div, ul, li, table, tr, th, td, span, h1 {
+body, div, ul, li, table, tr, th, td, span, h1, input {
     margin: 0;
     padding: 0;
 }
@@ -29,4 +29,16 @@ ul, li {
 
 .hide {
     display: none;
+}
+
+::-webkit-input-placeholder{
+    color:#ddd;
+}
+
+::-moz-placeholder{
+    color:#ddd;
+}
+
+:-moz-placeholder{
+    color:#ddd;
 }

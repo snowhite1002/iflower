@@ -7,8 +7,17 @@ class EditSeed extends React.Component {
     constructor(props){
         super(props);
 
+        let clickData = {
+            id: this.props.clickData.id,
+            name: this.props.clickData.name,
+            category: this.props.clickData.category,
+            color: this.props.clickData.color,
+            date: this.props.clickData.date,
+            count: this.props.clickData.count
+        };
+
         this.state = {
-            currentData: this.props.clickData
+            currentData: clickData
         };
 
         this.componentWillReceiveProps = this.componentWillReceiveProps.bind(this);
@@ -62,10 +71,6 @@ class EditSeed extends React.Component {
     }
 
     submitEdit(){
-        if(this.state.currentData.count <= 0){
-            return;
-        }
-
         this.props.handleEdit(this.state.currentData);
     }
 
@@ -74,8 +79,17 @@ class EditSeed extends React.Component {
     }
 
     componentWillReceiveProps(nextProps){
+        let clickData = {
+            id: nextProps.clickData.id,
+            name: nextProps.clickData.name,
+            category: nextProps.clickData.category,
+            color: nextProps.clickData.color,
+            date: nextProps.clickData.date,
+            count: nextProps.clickData.count
+        };
+
         this.setState({
-            currentData: nextProps.clickData
+            currentData: clickData
         });
     }
 
