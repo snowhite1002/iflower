@@ -9,6 +9,16 @@
     clear: both;
 }
 
+.content .garden .plantItem {
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    background-color: #7371b7;
+    text-align: center;
+    cursor: default;
+    color: #fff;
+}
+
 .content .seed-content table {
     width: 800px;
     text-align: center;
